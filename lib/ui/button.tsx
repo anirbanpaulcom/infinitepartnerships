@@ -12,12 +12,7 @@ export interface ButtonProps
   shortcut?: string;
   right?: ReactNode;
   disabledTooltip?: string | ReactNode;
-  variant?:
-    | 'primary'
-    | 'secondary'
-    | 'success'
-    | 'danger'
-    | 'danger-outline';
+  variant?: 'primary' | 'secondary' | 'success' | 'danger' | 'danger-outline';
 }
 
 export const buttonVariantClasses: Record<
@@ -25,12 +20,9 @@ export const buttonVariantClasses: Record<
   string
 > = {
   primary: 'hover:bg-gray border-on text-color',
-  secondary:
-    'border-on hover:reverse-bg hover:reverse-text',
-  success:
-    'bg-green-500 text-white hover:bg-green-600',
-  danger:
-    'bg-red-500 text-white hover:bg-red-600',
+  secondary: 'border-on hover:reverse-bg hover:reverse-text',
+  success: 'bg-green-500 text-white hover:bg-green-600',
+  danger: 'bg-red-500 text-white hover:bg-red-600',
   'danger-outline':
     'border-on bg-white text-red-500 hover:bg-red-600 hover:text-white',
 };
@@ -49,7 +41,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
       right,
       ...props
     }: ButtonProps,
-    forwardedRef,
+    forwardedRef
   ) => {
     const variantClass = buttonVariantClasses[variant];
 
@@ -63,7 +55,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
                 'border-transparent bg-transparent':
                   variant?.endsWith('outline'),
               },
-              className,
+              className
             )}
           >
             {icon}
@@ -72,7 +64,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
                 className={cn(
                   'min-w-0 truncate font-semibold',
                   shortcut && 'flex-1 text-left',
-                  textWrapperClassName,
+                  textWrapperClassName
                 )}
               >
                 {text}
@@ -84,7 +76,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
                   'hidden rounded border border-gray-200 bg-gray-100 px-2 py-0.5 text-xs font-light text-gray-400 md:inline-block',
                   {
                     'bg-gray-100': variant?.endsWith('outline'),
-                  },
+                  }
                 )}
               >
                 {shortcut}
@@ -104,7 +96,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
           props.disabled || loading
             ? 'cursor-not-allowed bg-gray text-gray-400 border-on'
             : variantClass,
-          className,
+          className
         )}
         disabled={props.disabled || loading}
         {...props}
@@ -115,7 +107,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
             className={cn(
               'min-w-0 truncate font-semibold',
               shortcut && 'flex-1 text-left',
-              textWrapperClassName,
+              textWrapperClassName
             )}
           >
             {text}
@@ -128,11 +120,9 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
               {
                 'bg-gray-700 text-gray-400 group-hover:bg-gray-600 group-hover:text-gray-300':
                   variant === 'primary',
-                'bg-gray border-on text-gray-400':
-                  variant === 'secondary',
-                'boder-on bg-transparent/10':
-                  variant === 'danger-outline',
-              },
+                'bg-gray border-on text-gray-400': variant === 'secondary',
+                'boder-on bg-transparent/10': variant === 'danger-outline',
+              }
             )}
           >
             {shortcut}
@@ -141,7 +131,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
         {right}
       </button>
     );
-  },
+  }
 );
 
 Button.displayName = 'Button';

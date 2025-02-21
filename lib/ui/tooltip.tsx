@@ -26,7 +26,7 @@ export default function Tooltiper({
           <Tooltip.Content
             className={cn(
               'z-50 select-none max-w-96 rounded-lg px-4 py-1 m-1 bg-gray border-on text-xs leading-none text-violet11 shadow-[hsl(206_22%_7%_/_35%)_0px_10px_38px_-10px,_hsl(206_22%_7%_/_20%)_0px_10px_20px_-15px] will-change-[transform,opacity] data-[state=delayed-open]:data-[side=bottom]:animate-slideUpAndFade data-[state=delayed-open]:data-[side=left]:animate-slideRightAndFade data-[state=delayed-open]:data-[side=right]:animate-slideLeftAndFade data-[state=delayed-open]:data-[side=top]:animate-slideDownAndFade',
-              className,
+              className
             )}
             sideOffset={5}
             side={side}

@@ -8,10 +8,7 @@ type TextType = 'h1' | 'h2' | 'h3' | 'p1' | 'h4' | 'h5' | 'p2' | 'p3' | 'span';
 export interface TextProps<E extends TextType = 'p1'>
   extends React.HTMLProps<HTMLElement> {
   children: React.ReactNode;
-  color?:
-    | 'white'
-    | 'black'
-    | 'gradient'
+  color?: 'white' | 'black' | 'gradient';
   className?: string;
   type?: E;
   animationType?:

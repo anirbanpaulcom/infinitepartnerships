@@ -1,6 +1,6 @@
-"use client";
+'use client';
 
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef } from 'react';
 
 interface ColorRGB {
   r: number;
@@ -67,7 +67,7 @@ export default function SplashCursor({
   SHADING = true,
   COLOR_UPDATE_SPEED = 10,
   BACK_COLOR = { r: 0.5, g: 0, b: 0 },
-  TRANSPARENT = true
+  TRANSPARENT = true,
 }: SplashCursorProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
@@ -118,38 +118,38 @@ export default function SplashCursor({
       };
 
       let gl = canvas.getContext(
-        "webgl2",
+        'webgl2',
         params
       ) as WebGL2RenderingContext | null;
 
       if (!gl) {
-        gl = (canvas.getContext("webgl", params) ||
+        gl = (canvas.getContext('webgl', params) ||
           canvas.getContext(
-            "experimental-webgl",
+            'experimental-webgl',
             params
           )) as WebGL2RenderingContext | null;
       }
 
       if (!gl) {
-        throw new Error("Unable to initialize WebGL.");
+        throw new Error('Unable to initialize WebGL.');
       }
 
-      const isWebGL2 = "drawBuffers" in gl;
+      const isWebGL2 = 'drawBuffers' in gl;
 
       let supportLinearFiltering = false;
       let halfFloat = null;
 
       if (isWebGL2) {
         // For WebGL2
-        (gl as WebGL2RenderingContext).getExtension("EXT_color_buffer_float");
+        (gl as WebGL2RenderingContext).getExtension('EXT_color_buffer_float');
         supportLinearFiltering = !!(gl as WebGL2RenderingContext).getExtension(
-          "OES_texture_float_linear"
+          'OES_texture_float_linear'
         );
       } else {
         // For WebGL1
-        halfFloat = gl.getExtension("OES_texture_half_float");
+        halfFloat = gl.getExtension('OES_texture_half_float');
         supportLinearFiltering = !!gl.getExtension(
-          "OES_texture_half_float_linear"
+          'OES_texture_half_float_linear'
         );
       }
 
@@ -157,13 +157,13 @@ export default function SplashCursor({
 
       const halfFloatTexType = isWebGL2
         ? (gl as WebGL2RenderingContext).HALF_FLOAT
-        : (halfFloat && (halfFloat).HALF_FLOAT_OES) || 0;
+        : (halfFloat && halfFloat.HALF_FLOAT_OES) || 0;
 
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
       let formatRGBA: any;
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
       let formatRG: any;
-     // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       let formatR: any;
 
       if (isWebGL2) {
@@ -211,7 +211,7 @@ export default function SplashCursor({
     ): { internalFormat: number; format: number } | null {
       if (!supportRenderTextureFormat(gl, internalFormat, format, type)) {
         // For WebGL2 fallback:
-        if ("drawBuffers" in gl) {
+        if ('drawBuffers' in gl) {
           const gl2 = gl as WebGL2RenderingContext;
           switch (internalFormat) {
             case gl2.R16F:
@@ -280,7 +280,7 @@ export default function SplashCursor({
 
     function addKeywords(source: string, keywords: string[] | null) {
       if (!keywords) return source;
-      let keywordsString = "";
+      let keywordsString = '';
       for (const keyword of keywords) {
         keywordsString += `#define ${keyword}\n`;
       }
@@ -552,7 +552,7 @@ export default function SplashCursor({
           gl_FragColor = result / decay;
       }
     `,
-      ext.supportLinearFiltering ? null : ["MANUAL_FILTERING"]
+      ext.supportLinearFiltering ? null : ['MANUAL_FILTERING']
     );
 
     const divergenceShader = compileShader(
@@ -980,7 +980,7 @@ export default function SplashCursor({
 
     function updateKeywords() {
       const displayKeywords: string[] = [];
-      if (config.SHADING) displayKeywords.push("SHADING");
+      if (config.SHADING) displayKeywords.push('SHADING');
       displayMaterial.setKeywords(displayKeywords);
     }
 
@@ -1447,7 +1447,7 @@ export default function SplashCursor({
     }
 
     // -------------------- Event Listeners --------------------
-    window.addEventListener("mousedown", (e) => {
+    window.addEventListener('mousedown', (e) => {
       const pointer = pointers[0];
       const posX = scaleByPixelRatio(e.clientX);
       const posY = scaleByPixelRatio(e.clientY);
@@ -1463,11 +1463,11 @@ export default function SplashCursor({
       const color = generateColor();
       updateFrame();
       updatePointerMoveData(pointer, posX, posY, color);
-      document.body.removeEventListener("mousemove", handleFirstMouseMove);
+      document.body.removeEventListener('mousemove', handleFirstMouseMove);
     }
-    document.body.addEventListener("mousemove", handleFirstMouseMove);
+    document.body.addEventListener('mousemove', handleFirstMouseMove);
 
-    window.addEventListener("mousemove", (e) => {
+    window.addEventListener('mousemove', (e) => {
       const pointer = pointers[0];
       const posX = scaleByPixelRatio(e.clientX);
       const posY = scaleByPixelRatio(e.clientY);
@@ -1485,12 +1485,12 @@ export default function SplashCursor({
         updateFrame();
         updatePointerDownData(pointer, touches[i].identifier, posX, posY);
       }
-      document.body.removeEventListener("touchstart", handleFirstTouchStart);
+      document.body.removeEventListener('touchstart', handleFirstTouchStart);
     }
-    document.body.addEventListener("touchstart", handleFirstTouchStart);
+    document.body.addEventListener('touchstart', handleFirstTouchStart);
 
     window.addEventListener(
-      "touchstart",
+      'touchstart',
       (e) => {
         const touches = e.targetTouches;
         const pointer = pointers[0];
@@ -1504,7 +1504,7 @@ export default function SplashCursor({
     );
 
     window.addEventListener(
-      "touchmove",
+      'touchmove',
       (e) => {
         const touches = e.targetTouches;
         const pointer = pointers[0];
@@ -1517,7 +1517,7 @@ export default function SplashCursor({
       false
     );
 
-    window.addEventListener("touchend", (e) => {
+    window.addEventListener('touchend', (e) => {
       const touches = e.changedTouches;
       const pointer = pointers[0];
       for (let i = 0; i < touches.length; i++) {
@@ -1544,7 +1544,11 @@ export default function SplashCursor({
 
   return (
     <div className="fixed top-0 left-0 z-50 pointer-events-none w-full h-full">
-      <canvas ref={canvasRef} id="fluid" className="w-screen h-screen block"></canvas>
+      <canvas
+        ref={canvasRef}
+        id="fluid"
+        className="w-screen h-screen block"
+      ></canvas>
     </div>
   );
 }

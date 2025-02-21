@@ -16,7 +16,7 @@ const IconButton: React.FC<
     <button
       className={cn(
         'group relative bg-gray hover:bg-color text-gray hover:text-color rounded-xl p-1.5 w-8 h-8 border-on flex items-center justify-center overflow-hidden transition-all duration-300',
-        className,
+        className
       )}
       {...props}
     >
@@ -24,7 +24,7 @@ const IconButton: React.FC<
         <div
           className={cn(
             'absolute inset-0 flex items-center justify-center',
-            `${hoverIcon ? 'transition-transform duration-200 group-hover:translate-y-12 group-hover:opacity-0' : ''}`,
+            `${hoverIcon ? 'transition-transform duration-200 group-hover:translate-y-12 group-hover:opacity-0' : ''}`
           )}
         >
           {Icon}
@@ -32,7 +32,7 @@ const IconButton: React.FC<
 
         <div
           className={cn(
-            'absolute inset-0 flex items-center justify-center transition-opacity duration-200 opacity-0 group-hover:opacity-100',
+            'absolute inset-0 flex items-center justify-center transition-opacity duration-200 opacity-0 group-hover:opacity-100'
           )}
         >
           {hoverIcon}

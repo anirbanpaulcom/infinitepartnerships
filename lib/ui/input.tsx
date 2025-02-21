@@ -17,7 +17,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
 
     const toggleIsPasswordVisible = useCallback(
       () => setIsPasswordVisible(!isPasswordVisible),
-      [isPasswordVisible, setIsPasswordVisible],
+      [isPasswordVisible, setIsPasswordVisible]
     );
 
     return (
@@ -37,7 +37,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
               'w-full h-10 p-2 rounded-lg border bg-gray-100 font-normal border-gray-300 text-gray-900 placeholder-gray-400 placeholder:text-sm focus:border-gray-500 focus:outline-none focus:ring-gray-500 sm:text-md',
               props.error &&
                 'border-red-500 focus:border-red-500 focus:ring-red-500',
-              className,
+              className
             )}
             ref={ref}
             {...props}
@@ -50,7 +50,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
                   className={cn(
                     'size-5 text-white',
                     type === 'password' &&
-                      'transition-opacity group-hover:opacity-0',
+                      'transition-opacity group-hover:opacity-0'
                   )}
                   fill="#ef4444"
                 />
@@ -61,7 +61,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
                 className={cn(
                   'absolute inset-y-0 right-0 flex items-center px-3',
                   props.error &&
-                    'opacity-0 transition-opacity group-hover:opacity-100',
+                    'opacity-0 transition-opacity group-hover:opacity-100'
                 )}
                 type="button"
                 onClick={() => toggleIsPasswordVisible()}
@@ -96,7 +96,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
         )}
       </div>
     );
-  },
+  }
 );
 
 Input.displayName = 'Input';

@@ -16,7 +16,7 @@ export function ProgressBar({
     <div
       className={cn(
         'h-3 w-full overflow-hidden rounded-full bg-gray-200',
-        className,
+        className
       )}
     >
       <motion.div
