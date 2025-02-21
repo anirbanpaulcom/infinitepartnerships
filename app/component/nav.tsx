@@ -169,14 +169,14 @@ function DesktopNav() {
       </HoverDropdown>
       <div className="flex justify-between items-center w-[450px] bg-black rounded-full py-4 px-8">
         {['Home', 'About', 'Services', 'Contact', 'Book Online'].map((item) => {
-          const href = `/${item.toLowerCase() === 'home' ? '' : item.toLowerCase()}`;
+          const href = `/${item.toLowerCase() === 'home' ? '' : item.replace(/\s+/g, '-').toLowerCase()}`;
           const active = pathname === href;
 
           return (
             <Link
               key={item}
               href={href}
-              className={`text-sm  ${
+              className={`text-xs md:text-sm  ${
                 active
                   ? 'text-blue-600 font-medium'
                   : 'text-gray hover:text-color font-normal'

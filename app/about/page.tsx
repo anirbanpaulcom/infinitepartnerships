@@ -1,6 +1,6 @@
 import React from 'react';
 import Container from '../component/layout/container';
-import { H2, H3, P1, P2 } from '@/lib/ui';
+import { H1, H2, H3, P1, P2 } from '@/lib/ui';
 import Image from 'next/image';
 import Clients from '../component/splitscreen/clients';
 
@@ -37,7 +37,7 @@ export default function About() {
         />
       </section>
 
-      <section className="flex flex-col w-full h-full justify-center px-32 py-20 bg-gradient-to-t from-gray-900 via-black to-gray-900">
+      <section className="flex flex-col w-full h-full justify-center p-10 lg:py-px-32 lg:py-20 bg-gradient-to-t from-gray-900 via-black to-gray-900">
         <H2 className="text-center">CORE VALUE</H2>
         <div className="h-1 w-10 mb-10 self-center bg-white rounded-xl" />
 
@@ -93,53 +93,54 @@ export default function About() {
       </section>
 
       <section
-        className="relative w-full h-full bg-cover bg-center py-20 flex flex-col justify-center"
-        style={{
-          backgroundImage: `url('https://static.wixstatic.com/media/db5bce_9a6ea32d1ad64e1096e544ec80754d65~mv2.jpg/v1/fill/w_1521,h_1390,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/db5bce_9a6ea32d1ad64e1096e544ec80754d65~mv2.jpg')`,
-        }}
+  className="relative w-full h-full bg-cover bg-center py-20 flex flex-col justify-center overflow-x-hidden"
+  style={{
+    backgroundImage: `url('https://static.wixstatic.com/media/db5bce_9a6ea32d1ad64e1096e544ec80754d65~mv2.jpg/v1/fill/w_1521,h_1390,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/db5bce_9a6ea32d1ad64e1096e544ec80754d65~mv2.jpg')`,
+  }}
+>
+  <div className="flex justify-start items-center my-10 pl-10">
+    <video
+      className="w-[100%] h-[100%] md:w-[60%] md:h-[60%] object-cover"
+      autoPlay
+      loop
+      muted
+      playsInline
+    >
+      <source
+        src="https://video.wixstatic.com/video/db5bce_577fb3606dfa4dd3bea56eb0643fdec4/1080p/mp4/file.mp4"
+        type="video/mp4"
+      />
+    </video>
+
+    <div className="relative -left-14 text-left text-white z-20 ">
+      <H1 className=" font-extrabold  ">
+        <span className="text-yellow-500">T</span>ogether <br />
+        <span className="text-yellow-500">E</span>veryone <br />
+        <span className="text-yellow-500">A</span>chieve <br />
+        <span className="text-yellow-500">M</span>ore
+      </H1>
+    </div>
+  </div>
+
+  <div className="w-full px-10 py-10 bg-opacity-75 flex flex-wrap justify-center items-center gap-6">
+    {employees.map((employee, index) => (
+      <div
+        key={index}
+        className="h-56 w-72 mx-10 flex flex-col justify-center items-center bg-gray-800 rounded-md"
       >
-        <div className="flex justify-start items-center my-10 pl-10">
-          <video
-            className="w-[60%] h-[60%] object-cover"
-            autoPlay
-            loop
-            muted
-            playsInline
-          >
-            <source
-              src="https://video.wixstatic.com/video/db5bce_577fb3606dfa4dd3bea56eb0643fdec4/1080p/mp4/file.mp4"
-              type="video/mp4"
-            />
-          </video>
+        <h2 className="text-xl font-bold mb-2 text-yellow-400">
+          {employee.name}
+        </h2>
+        <p>{employee.role}</p>
+      </div>
+    ))}
+  </div>
+</section>
 
-          <div className="relative -left-14 text-left text-white z-20 ">
-            <h1 className="text-9xl font-extrabold ">
-              <span className="text-yellow-500">T</span>ogether <br />
-              <span className="text-yellow-500">E</span>veryone <br />
-              <span className="text-yellow-500">A</span>chieve <br />
-              <span className="text-yellow-500">M</span>ore
-            </h1>
-          </div>
-        </div>
-
-        <div className="w-full px-10 py-10 bg-opacity-75 flex flex-wrap justify-center items-center gap-6">
-          {employees.map((employee, index) => (
-            <div
-              key={index}
-              className="h-56 w-72 mx-10 flex flex-col justify-center items-center bg-gray-800 rounded-md"
-            >
-              <h2 className="text-xl font-bold mb-2 text-yellow-400">
-                {employee.name}
-              </h2>
-              <p>{employee.role}</p>
-            </div>
-          ))}
-        </div>
-      </section>
 
       <Clients />
 
-      <section className="flex flex-col w-full h-full justify-center items-center my-20 mb-32">
+      <section className="flex flex-col w-full h-[60vh] justify-center items-center my-20  overflow-x-hidden">
         <H2 className=" absolute  max-w-2xl text-center line-clamp-6 z-40">
           TALK TO US TODAY WITH FIRST FREE CONSULTATION
         </H2>

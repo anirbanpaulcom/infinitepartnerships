@@ -14,7 +14,7 @@ import { BsTiktok, BsYoutube } from 'react-icons/bs';
 
 export function Footer() {
   return (
-    <footer className="flex flex-col justify-center  py-20  px-56">
+    <footer className="flex flex-col justify-center p-10  md:p-10 xl:py-20 xl:px-56">
       <Logo />
       <h3 className="my-8 font-extrabold text-5xl">
         Be in the Know Possibility is endless, we can build your dreamed mobiles
@@ -43,7 +43,7 @@ export function Footer() {
         <h6 className="text-gray-500">
           © 2022 Infinite Partnerships | All Rights Reserved.
         </h6>
-        <div className="flex gap-4">
+        <div className="flex flex-wrap gap-4">
           <InstagramLogoIcon className="size-8 text-gray-600 cursor-pointer" />
           <FaFacebook className="size-8 text-gray-600 cursor-pointer" />
           <TwitterLogoIcon className="size-8 text-gray-600 cursor-pointer" />
