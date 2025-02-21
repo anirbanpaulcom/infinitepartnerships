@@ -2,20 +2,125 @@
 @tailwind components;
 @tailwind utilities;
 
+@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
+
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: black;
+  --foreground: white;
+  --reverse-bg: white;
+  --reverse-text: black;
+  --border-width: 1.2px;
+  --border-color: rgb(255 255 255 / 0.1);
+  --background-gray: rgb(255 255 255 / 0.05);
+  --text-gray: rgb(255 255 255 / 0.7);
+  --gradient-from: #d3d3d3;
+  --gradient-via: #d3d3d3;
+  --gradient-to: #4b4b4b;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
+/* .dark {
+  --background: black;
+  --foreground: white;
+  --reverse-bg: white;
+  --reverse-text: black;
+  --border-width: 1.2px;
+  --border-color: rgb(255 255 255 / 0.1);
+  --background-gray: rgb(255 255 255 / 0.05);
+  --text-gray: rgb(255 255 255 / 0.7);
+  --gradient-from: #d3d3d3;
+  --gradient-via: #d3d3d3;
+  --gradient-to: #4b4b4b;
+} */
 
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: sans-serif;
+  margin:0;
+  padding:0;
+}
+
+.text-color {
+  color: var(--foreground);
+}
+
+.hover\:text-color:hover {
+  color: var(--foreground);
+}
+
+.bg-color {
+  background: var(--background);
+}
+
+.hover\:bg-color:hover {
+  background: var(--background);
+}
+
+.reverse-text {
+  color: var(--reverse-text);
+}
+
+.hover\:reverse-text:hover {
+  color: var(--reverse-text);
+}
+
+.reverse-bg {
+  background: var(--reverse-bg);
+}
+
+.hover\:reverse-bg:hover {
+  background: var(--reverse-bg);
+}
+
+.border-on {
+  border-width: var(--border-width);
+  border-color: var(--border-color);
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+}
+
+.hover\:border-on:hover {
+  border-width: var(--border-width);
+  border-color: var(--border-color);
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+}
+
+.bg-gray {
+  background-color: var(--background-gray);
+}
+
+.hover\:bg-gray:hover {
+  background-color: var(--background-gray);
+}
+
+.text-gray {
+  color: var(--text-gray);
+}
+
+.hover\:text-gray:hover {
+  color: var(--text-gray);
+}
+
+.text-gradient {
+  background: linear-gradient(
+    to bottom,
+    var(--gradient-from),
+    var(--gradient-via),
+    var(--gradient-to)
+  );
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.bg-gradient {
+  background: linear-gradient(
+    to right,
+    var(--gradient-from),
+    var(--gradient-via),
+    var(--gradient-to)
+  );
 }
