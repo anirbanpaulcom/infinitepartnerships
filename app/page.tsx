@@ -1,6 +1,9 @@
+'use client'
+
+import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Container from './component/layout/container';
-import { H1, H2, H3, H4, P1 } from '@/lib/ui';
+import { animationVariants, H1, H2, H3, H4, P1 } from '@/lib/ui';
 
 const imageLinks = [
   'https://static.wixstatic.com/media/db5bce_74f3b8e4ca584c859b441d22b232f5a5~mv2.png/v1/fit/w_1105,h_563,q_90,enc_avif,quality_auto/db5bce_74f3b8e4ca584c859b441d22b232f5a5~mv2.png',
@@ -14,7 +17,7 @@ const imageLinks = [
 export default function Home() {
   return (
     <Container>
-      <section className="relative w-full h-[110vh]">
+      <section className="relative w-full h-[50vh] md:h-[70vh] lg:h-[80vh] xl:h-[110vh]">
         <Image
           width={500}
           height={500}
@@ -27,31 +30,31 @@ export default function Home() {
             <H1 className="max-w-4xl" animationType="slideLeft">
               Make Your Mobile App Dreams a Reality
             </H1>
-            <P1 animationType="slideLeft" className="max-w-4xl my-4">
+            <P1 animationType="slideLeft" className="my-4 max-w-3xl md:max-w-4xl">
               Professional Mobile & Web Apps and Customised Software Solutions
               Under One Roof
             </P1>
-            <div className="my-4">
+            <motion.div {...animationVariants.slideLeft} className="my-4 ">
               <button
-                className="h-12 w-32 rounded-full bg-red-900 opacity-80 text-white  cursor-pointer p-2  mr-4"
+                className="h-12 w-32  rounded-full bg-red-900 opacity-80 text-white  cursor-pointer p-2  m-2"
                 title="Booking Now"
               >
                 Booking Now
               </button>
               <button
-                className="h-12 w-32 rounded-full bg-red-900 opacity-80 text-white cursor-pointer p-2 mx-4"
+                className="h-12  w-32 rounded-full bg-red-900 opacity-80 text-white cursor-pointer p-2 m-2"
                 title="Booking Now"
               >
                 Find More
               </button>
-            </div>
+            </motion.div>
           </div>
 
           <div></div>
         </div>
       </section>
 
-      <section className="relative w-full h-full flex justify-center py-10 bg-[rgb(229,152,135)]">
+      <section className="relative w-full h-full flex justify-center items-start p-4 sm:py-8 sm:px-16 md:px-24  lg:py-10 lg:px-28 xl:px-36  bg-[rgb(229,152,135)]">
         <Image
           width={500}
           height={500}
@@ -67,8 +70,8 @@ export default function Home() {
         </H2>
       </section>
 
-      <section className="flex flex-col justify-center items-center my-10">
-        <H3 className="max-w-5xl text-center">
+      <section className="flex flex-col justify-center items-center p-4 sm:p-8 md:p-14">
+        <H3 className="max-w-5xl text-center" animationType="slideLeft">
           Build a{' '}
           <span className="text-orange-600">superior mobile application</span>{' '}
           with full-cycle mobile app development services. We can assist in all
@@ -84,12 +87,12 @@ export default function Home() {
         </button>
       </section>
 
-      <section className="p-8">
+      <section className="p-4 sm:p-8 md:p-14">
         <div className="flex flex-col gap-3">
           {imageLinks.map((src, index) => {
             if (index % 3 === 0) {
               return (
-                <div key={index} className="w-[80vw]  cursor-pointer ">
+                <div key={index} className="min-w-[80vw]  cursor-pointer ">
                   <Image
                     src={src}
                     alt={`Image ${index + 1}`}
@@ -130,32 +133,32 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="flex flex-col w-full justify-center items-center py-10 bg-orange-600">
+      <section className="flex flex-col w-full justify-center items-start p-4 sm:py-8 sm:px-16 md:px-24  lg:py-10 lg:px-28 xl:px-36  bg-orange-700">
         <div>
-          <H1>
+          <H1 animationType="slideLeft">
             OUR <br />
             CASE STUDY
           </H1>
-          <button
-            className="h-12 w-60 rounded-full bg-gray-300 opacity-80 text-white  font-extrabold text-lg cursor-pointer p-2 my-4"
+          <motion.button {...animationVariants.slideLeft}
+            className="h-12 w-60 rounded-full bg-gray-300 opacity-80 text-white font-extrabold text-lg cursor-pointer p-2 my-4"
             title="Booking Now"
           >
             FIND MORE
-          </button>
+          </motion.button>
         </div>
       </section>
 
-      <section className="flex flex-col w-full justify-center items-center py-4 bg-gray-800">
+      <section className="flex flex-col w-full justify-center  items-start p-4 sm:py-8 sm:px-16 md:px-24  lg:py-10 lg:px-28 xl:px-36 bg-gray-800">
         <div>
-          <H3 className="max-w-6xl">
+          <H3 className="max-w-6xl" animationType="slideLeft">
             BESKOPE WEB SOFTWARE DEVELOPMENT ​MEET THE BUSINESS NEEDS
           </H3>
-          <button
+          <motion.button {...animationVariants.slideLeft}
             className="h-12 w-60 rounded-full bg-orange-600  opacity-80 text-white  font-extrabold text-lg cursor-pointer p-2 my-4"
             title="Booking Now"
           >
             FIND MORE
-          </button>
+          </motion.button>
         </div>
       </section>
 
@@ -168,27 +171,27 @@ export default function Home() {
         alt={''}
       />
 
-      <section className="flex flex-col w-full justify-center items-center py-16 bg-purple-400">
+      <section className="flex flex-col w-full justify-center items-start p-4 sm:py-8 sm:px-16 md:px-24  lg:py-10 lg:px-28 xl:px-36 bg-purple-400">
         <div>
-          <H1 className="text-orange-700">BOOK NOW</H1>
-          <H4 className="max-w-lg">
+          <H1 className="text-orange-700" animationType="slideLeft">BOOK NOW</H1>
+          <H4 className="max-w-lg" animationType="slideLeft">
             BOOKING WITH US NOW FIRST CONSULTATION FREE
           </H4>
-          <button className="h-12 w-60 rounded-full bg-orange-700  opacity-80 text-white  font-extrabold text-lg cursor-pointer p-2 my-4">
+          <motion.button {...animationVariants.slideLeft} className="h-12 w-60 rounded-full bg-orange-700  opacity-80 text-white  font-extrabold text-lg cursor-pointer p-2 my-4">
             Make Appointment
-          </button>
+          </motion.button>
         </div>
       </section>
 
       <section
-        className="w-full h-screen bg-cover bg-center flex items-center justify-center"
+        className="w-full h-full bg-cover bg-center flex items-start p-4 sm:py-8 sm:px-16 md:px-24  lg:py-10 lg:px-28 xl:px-36 justify-center"
         style={{
           backgroundImage:
             'url(https://github.com/user-attachments/assets/e35e41d4-c172-44c3-b069-03443012de9c)',
         }}
       >
         <div className=" p-8  max-w-5xl w-full">
-          <H2>Contact Us</H2>
+          <H2 animationType="slideLeft">Contact Us</H2>
 
           <form>
             <div className="mb-4">

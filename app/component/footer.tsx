@@ -11,10 +11,9 @@ import {
 } from '@radix-ui/react-icons';
 import { FaFacebook } from 'react-icons/fa';
 import { BsTiktok, BsYoutube } from 'react-icons/bs';
-
 export function Footer() {
   return (
-    <footer className="flex flex-col justify-center p-10  md:p-10 xl:py-20 xl:px-56">
+    <footer className="flex flex-col justify-center  items-start p-8 sm:py-12 sm:px-24 md:px-30 lg:py-20 lg:px-40 xl:px-60">
       <Logo />
       <h3 className="my-8 font-extrabold text-5xl">
         Be in the Know Possibility is endless, we can build your dreamed mobiles

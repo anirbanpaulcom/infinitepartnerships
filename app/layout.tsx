@@ -1,19 +1,16 @@
 import type { Metadata } from 'next';
-import { Geist, Geist_Mono } from 'next/font/google';
+import { Inter } from 'next/font/google'; // Using Inter as base font
 import './globals.css';
 import { Navbar, Footer } from './component';
 import { Scroller } from '@/lib/ui';
 import ChatBot from './component/bot';
 import SplashCursor from '@/lib/ui/splashcursor';
 
-const geistSans = Geist({
-  variable: '--font-geist-sans',
+// Define your base font (Inter in this case)
+const inter = Inter({
   subsets: ['latin'],
-});
-
-const geistMono = Geist_Mono({
-  variable: '--font-geist-mono',
-  subsets: ['latin'],
+  variable: '--font-base',
+  adjustFontFallback: false, // Disable default fallback
 });
 
 export const metadata: Metadata = {
@@ -28,12 +25,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+      <body className={`${inter.variable} font-system`}>
         <Navbar />
         <Scroller />
-
         {children}
         <ChatBot />
         <Footer />

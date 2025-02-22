@@ -34,8 +34,7 @@ export function Navbar() {
   return (
     <motion.nav
       style={{
-        height: useTransform(scrollY, [0, 50], ['100px', '-0px']),
-        opacity: useTransform(scrollY, [0, 50], [1, 0]),
+        height: useTransform(scrollY, [0, 50], ['100px', '70px']),
       }}
       initial={false}
       className={`fixed top-0 w-full flex justify-center items-center z-[1000] transition-all duration-300 ease-in-out`}

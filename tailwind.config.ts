@@ -17,7 +17,6 @@ export default {
         foreground: 'var(--foreground)',
         graydark: '#343334',
         gray2: 'rgba(255, 255, 255, 0.3)',
-        blue: 'rgb(18, 0, 88)',
       },
       keyframes: {
         enterFromRight: {

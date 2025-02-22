@@ -37,11 +37,10 @@ export default function About() {
         />
       </section>
 
-      <section className="flex flex-col w-full h-full justify-center p-10 lg:py-px-32 lg:py-20 bg-gradient-to-t from-gray-900 via-black to-gray-900">
-        <H2 className="text-center">CORE VALUE</H2>
-        <div className="h-1 w-10 mb-10 self-center bg-white rounded-xl" />
+      <section className="flex flex-col w-full h-full gap-14 justify-center  p-4 sm:py-8 sm:px-16 md:px-24  lg:py-10 lg:px-28 xl:px-36 bg-gradient-to-t from-gray-900 via-black to-gray-900">
+        <H2 className="text-center flex flex-col gap-2">CORE VALUE         <div className="h-1 w-10 mb-10 self-center bg-white rounded-xl" /></H2>
 
-        <div className="my-10">
+        <div>
           <H3 className="text-[#b9a991] font-serif">OUR GENE IS</H3>
           <H2>INNOVATION &INSPIRATION</H2>
           <P2>
@@ -53,13 +52,13 @@ export default function About() {
           </P2>
         </div>
 
-        <div className="my-10">
+        <div >
           <H3 className="text-[#b9a991] font-serif">ALWAYS BE </H3>
           <H2>CRIOUS</H2>
           <P2>Interested in everything around us and how to make it better </P2>
         </div>
 
-        <div className="my-10">
+        <div >
           <H3 className="text-[#b9a991] font-serif">FULL OF</H3>
           <H2>PASSION</H2>
           <P2>
@@ -70,7 +69,7 @@ export default function About() {
           </P2>
         </div>
 
-        <div className="my-10">
+        <div >
           <H3 className="text-[#b9a991] font-serif">BE AN</H3>
           <H2>AMBSSADOR</H2>
           <P2>
@@ -80,7 +79,7 @@ export default function About() {
           </P2>
         </div>
 
-        <div className="my-10">
+        <div >
           <H3 className="text-[#b9a991] font-serif">ACT WITH</H3>
           <H2>INTEGRITY</H2>
           <P2>
@@ -140,16 +139,16 @@ export default function About() {
 
       <Clients />
 
-      <section className="flex flex-col w-full h-[60vh] justify-center items-center my-20  overflow-x-hidden">
-        <H2 className=" absolute  max-w-2xl text-center line-clamp-6 z-40">
-          TALK TO US TODAY WITH FIRST FREE CONSULTATION
+      <section className="flex flex-col w-full h-[60vh] justify-center items-center mb-20">
+        <H2 className=" absolute  line-clamp-6 z-40">
+          TALK TO US TODAY <br /> WITH FIRST <br /> FREE CONSULTATION
         </H2>
 
         <div className="relative left-60 flex items-center justify-center mt-8">
           <div className="w-48 h-48 bg-gradient-to-r from-pink-500 to-white text-white text-lg font-bold rounded-full flex items-center justify-center"></div>
 
-          <button className=" z-50 absolute top-32 text-3xl font-bold right-24 w-60 h-60 bg-gradient-to-r from-pink-500 to-white rounded-full">
-            Book Now
+          <button className=" z-50 absolute top-32 text-5xl font-bold right-24 w-60 h-60 bg-gradient-to-r from-pink-500 to-white rounded-full">
+            Book  <br />Now
           </button>
         </div>
       </section>

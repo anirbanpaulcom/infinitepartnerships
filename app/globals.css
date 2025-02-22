@@ -18,24 +18,12 @@
   --gradient-to: #4b4b4b;
 }
 
-/* .dark {
-  --background: black;
-  --foreground: white;
-  --reverse-bg: white;
-  --reverse-text: black;
-  --border-width: 1.2px;
-  --border-color: rgb(255 255 255 / 0.1);
-  --background-gray: rgb(255 255 255 / 0.05);
-  --text-gray: rgb(255 255 255 / 0.7);
-  --gradient-from: #d3d3d3;
-  --gradient-via: #d3d3d3;
-  --gradient-to: #4b4b4b;
-} */
+
 
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: sans-serif;
+  font-family: "Inter", -apple-system, 'Helvetica Neue', Helvetica, Arial, sans-serif;
   margin: 0;
   padding: 0;
 }
