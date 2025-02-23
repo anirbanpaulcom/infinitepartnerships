@@ -38,7 +38,10 @@ export default function About() {
       </section>
 
       <section className="flex flex-col w-full h-full gap-14 justify-center  p-4 sm:py-8 sm:px-16 md:px-24  lg:py-10 lg:px-28 xl:px-36 bg-gradient-to-t from-gray-900 via-black to-gray-900">
-        <H2 className="text-center flex flex-col gap-2">CORE VALUE         <div className="h-1 w-10 mb-10 self-center bg-white rounded-xl" /></H2>
+        <H2 className="text-center flex flex-col gap-2">
+          CORE VALUE
+          <div className="h-1 w-10 mb-4 md:mb-10 self-center bg-white rounded-xl" />
+        </H2>
 
         <div>
           <H3 className="text-[#b9a991] font-serif">OUR GENE IS</H3>
@@ -52,13 +55,13 @@ export default function About() {
           </P2>
         </div>
 
-        <div >
+        <div>
           <H3 className="text-[#b9a991] font-serif">ALWAYS BE </H3>
           <H2>CRIOUS</H2>
           <P2>Interested in everything around us and how to make it better </P2>
         </div>
 
-        <div >
+        <div>
           <H3 className="text-[#b9a991] font-serif">FULL OF</H3>
           <H2>PASSION</H2>
           <P2>
@@ -69,7 +72,7 @@ export default function About() {
           </P2>
         </div>
 
-        <div >
+        <div>
           <H3 className="text-[#b9a991] font-serif">BE AN</H3>
           <H2>AMBSSADOR</H2>
           <P2>
@@ -79,7 +82,7 @@ export default function About() {
           </P2>
         </div>
 
-        <div >
+        <div>
           <H3 className="text-[#b9a991] font-serif">ACT WITH</H3>
           <H2>INTEGRITY</H2>
           <P2>
@@ -92,54 +95,53 @@ export default function About() {
       </section>
 
       <section
-  className="relative w-full h-full bg-cover bg-center py-20 flex flex-col justify-center overflow-x-hidden"
-  style={{
-    backgroundImage: `url('https://static.wixstatic.com/media/db5bce_9a6ea32d1ad64e1096e544ec80754d65~mv2.jpg/v1/fill/w_1521,h_1390,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/db5bce_9a6ea32d1ad64e1096e544ec80754d65~mv2.jpg')`,
-  }}
->
-  <div className="flex justify-start items-center my-10 pl-10">
-    <video
-      className="w-[100%] h-[100%] md:w-[60%] md:h-[60%] object-cover"
-      autoPlay
-      loop
-      muted
-      playsInline
-    >
-      <source
-        src="https://video.wixstatic.com/video/db5bce_577fb3606dfa4dd3bea56eb0643fdec4/1080p/mp4/file.mp4"
-        type="video/mp4"
-      />
-    </video>
-
-    <div className="relative -left-14 text-left text-white z-20 ">
-      <H1 className=" font-extrabold  ">
-        <span className="text-yellow-500">T</span>ogether <br />
-        <span className="text-yellow-500">E</span>veryone <br />
-        <span className="text-yellow-500">A</span>chieve <br />
-        <span className="text-yellow-500">M</span>ore
-      </H1>
-    </div>
-  </div>
-
-  <div className="w-full px-10 py-10 bg-opacity-75 flex flex-wrap justify-center items-center gap-6">
-    {employees.map((employee, index) => (
-      <div
-        key={index}
-        className="h-56 w-72 mx-10 flex flex-col justify-center items-center bg-gray-800 rounded-md"
+        className="relative w-full h-full bg-cover bg-center py-20 flex flex-col justify-center overflow-x-hidden"
+        style={{
+          backgroundImage: `url('https://static.wixstatic.com/media/db5bce_9a6ea32d1ad64e1096e544ec80754d65~mv2.jpg/v1/fill/w_1521,h_1390,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/db5bce_9a6ea32d1ad64e1096e544ec80754d65~mv2.jpg')`,
+        }}
       >
-        <h2 className="text-xl font-bold mb-2 text-yellow-400">
-          {employee.name}
-        </h2>
-        <p>{employee.role}</p>
-      </div>
-    ))}
-  </div>
-</section>
+        <div className="flex justify-start items-center my-10 pl-10">
+          <video
+            className="w-[100%] h-[100%] md:w-[60%] md:h-[60%] object-cover"
+            autoPlay
+            loop
+            muted
+            playsInline
+          >
+            <source
+              src="https://video.wixstatic.com/video/db5bce_577fb3606dfa4dd3bea56eb0643fdec4/1080p/mp4/file.mp4"
+              type="video/mp4"
+            />
+          </video>
 
+          <div className="relative -left-14 text-left text-white z-20 ">
+            <H1 className=" font-extrabold  ">
+              <span className="text-yellow-500">T</span>ogether <br />
+              <span className="text-yellow-500">E</span>veryone <br />
+              <span className="text-yellow-500">A</span>chieve <br />
+              <span className="text-yellow-500">M</span>ore
+            </H1>
+          </div>
+        </div>
+
+        <div className="w-full px-10 py-10 bg-opacity-75 flex flex-wrap justify-center items-center gap-6">
+          {employees.map((employee, index) => (
+            <div
+              key={index}
+              className="h-56 w-72 mx-10 flex flex-col justify-center items-center bg-gray-800 rounded-md"
+            >
+              <h2 className="text-xl font-bold mb-2 text-yellow-400">
+                {employee.name}
+              </h2>
+              <p>{employee.role}</p>
+            </div>
+          ))}
+        </div>
+      </section>
 
       <Clients />
 
-      <section className="flex flex-col w-full h-[60vh] justify-center items-center mb-20">
+      <section className="flex flex-col w-full h-[60vh] justify-center items-center mb-24">
         <H2 className=" absolute  line-clamp-6 z-40">
           TALK TO US TODAY <br /> WITH FIRST <br /> FREE CONSULTATION
         </H2>
@@ -148,7 +150,8 @@ export default function About() {
           <div className="w-48 h-48 bg-gradient-to-r from-pink-500 to-white text-white text-lg font-bold rounded-full flex items-center justify-center"></div>
 
           <button className=" z-50 absolute top-32 text-5xl font-bold right-24 w-60 h-60 bg-gradient-to-r from-pink-500 to-white rounded-full">
-            Book  <br />Now
+            Book <br />
+            Now
           </button>
         </div>
       </section>

@@ -1,16 +1,14 @@
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google'; // Using Inter as base font
+import { Inter } from 'next/font/google';
 import './globals.css';
 import { Navbar, Footer } from './component';
 import { Scroller } from '@/lib/ui';
 import ChatBot from './component/bot';
-import SplashCursor from '@/lib/ui/splashcursor';
 
-// Define your base font (Inter in this case)
 const inter = Inter({
   subsets: ['latin'],
   variable: '--font-base',
-  adjustFontFallback: false, // Disable default fallback
+  adjustFontFallback: false,
 });
 
 export const metadata: Metadata = {
@@ -31,7 +29,6 @@ export default function RootLayout({
         {children}
         <ChatBot />
         <Footer />
-        <SplashCursor />
       </body>
     </html>
   );

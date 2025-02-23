@@ -42,8 +42,6 @@ const colorClassname = {
   gradient: 'text-gradient',
 };
 
-
-
 export const Text = <E extends TextType>({
   children,
   id,

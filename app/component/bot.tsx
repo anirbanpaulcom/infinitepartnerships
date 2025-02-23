@@ -1,5 +1,5 @@
 'use client';
-import { MessageSquareIcon, Send, X } from 'lucide-react';
+import { MessageSquareIcon, SendHorizonalIcon, X } from 'lucide-react';
 import { useState } from 'react';
 
 const ChatBot = () => {
@@ -24,7 +24,7 @@ const ChatBot = () => {
   return (
     <>
       <button
-        className="fixed flex justify-center items-center gap-2 bottom-10 right-10 p-3 px-8 bg-blue-600 text-white rounded-2xl z-40  text-xl"
+        className="fixed flex justify-center items-center gap-2 bottom-10 right-10 p-3 md:px-8 bg-blue-600 text-white rounded-2xl z-40  text-sm md:text-xl"
         onClick={() => setIsOpen(!isOpen)}
       >
         <MessageSquareIcon /> Lets Chat!
@@ -67,9 +67,9 @@ const ChatBot = () => {
               />
               <button
                 onClick={handleSendMessage}
-                className=" absolute right-2 bg-blue-500 text-black p-3 rounded-md"
+                className=" absolute right-2  text-black p-3 rounded-md"
               >
-                <Send />
+                <SendHorizonalIcon />
               </button>
             </div>
           </div>

@@ -1,9 +1,11 @@
-'use client'
+'use client';
 
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Container from './component/layout/container';
 import { animationVariants, H1, H2, H3, H4, P1 } from '@/lib/ui';
+import React from 'react';
+import { VideoSection } from './component/videosection';
 
 const imageLinks = [
   'https://static.wixstatic.com/media/db5bce_74f3b8e4ca584c859b441d22b232f5a5~mv2.png/v1/fit/w_1105,h_563,q_90,enc_avif,quality_auto/db5bce_74f3b8e4ca584c859b441d22b232f5a5~mv2.png',
@@ -17,7 +19,7 @@ const imageLinks = [
 export default function Home() {
   return (
     <Container>
-      <section className="relative w-full h-[50vh] md:h-[70vh] lg:h-[80vh] xl:h-[110vh]">
+      <section className="relative w-full h-[80vh] md:h-[90vh] lg:h-[100vh] xl:h-[110vh]">
         <Image
           width={500}
           height={500}
@@ -30,7 +32,10 @@ export default function Home() {
             <H1 className="max-w-4xl" animationType="slideLeft">
               Make Your Mobile App Dreams a Reality
             </H1>
-            <P1 animationType="slideLeft" className="my-4 max-w-3xl md:max-w-4xl">
+            <P1
+              animationType="slideLeft"
+              className="my-4 max-w-3xl md:max-w-4xl"
+            >
               Professional Mobile & Web Apps and Customised Software Solutions
               Under One Roof
             </P1>
@@ -64,7 +69,7 @@ export default function Home() {
         />
         <H2
           animationType="slideLeft"
-          className=" absolute self-center max-w-md text-center"
+          className=" absolute self-center max-w-[420px] px-10 md:px-6  text-center"
         >
           SCOPE OF OUR MOBILE SERVICES
         </H2>
@@ -139,7 +144,8 @@ export default function Home() {
             OUR <br />
             CASE STUDY
           </H1>
-          <motion.button {...animationVariants.slideLeft}
+          <motion.button
+            {...animationVariants.slideLeft}
             className="h-12 w-60 rounded-full bg-gray-300 opacity-80 text-white font-extrabold text-lg cursor-pointer p-2 my-4"
             title="Booking Now"
           >
@@ -148,12 +154,15 @@ export default function Home() {
         </div>
       </section>
 
+      <VideoSection />
+
       <section className="flex flex-col w-full justify-center  items-start p-4 sm:py-8 sm:px-16 md:px-24  lg:py-10 lg:px-28 xl:px-36 bg-gray-800">
         <div>
           <H3 className="max-w-6xl" animationType="slideLeft">
             BESKOPE WEB SOFTWARE DEVELOPMENT ​MEET THE BUSINESS NEEDS
           </H3>
-          <motion.button {...animationVariants.slideLeft}
+          <motion.button
+            {...animationVariants.slideLeft}
             className="h-12 w-60 rounded-full bg-orange-600  opacity-80 text-white  font-extrabold text-lg cursor-pointer p-2 my-4"
             title="Booking Now"
           >
@@ -173,11 +182,16 @@ export default function Home() {
 
       <section className="flex flex-col w-full justify-center items-start p-4 sm:py-8 sm:px-16 md:px-24  lg:py-10 lg:px-28 xl:px-36 bg-purple-400">
         <div>
-          <H1 className="text-orange-700" animationType="slideLeft">BOOK NOW</H1>
+          <H1 className="text-orange-700" animationType="slideLeft">
+            BOOK NOW
+          </H1>
           <H4 className="max-w-lg" animationType="slideLeft">
             BOOKING WITH US NOW FIRST CONSULTATION FREE
           </H4>
-          <motion.button {...animationVariants.slideLeft} className="h-12 w-60 rounded-full bg-orange-700  opacity-80 text-white  font-extrabold text-lg cursor-pointer p-2 my-4">
+          <motion.button
+            {...animationVariants.slideLeft}
+            className="h-12 w-60 rounded-full bg-orange-700  opacity-80 text-white  font-extrabold text-lg cursor-pointer p-2 my-4"
+          >
             Make Appointment
           </motion.button>
         </div>

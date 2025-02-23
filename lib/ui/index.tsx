@@ -5,4 +5,4 @@ export * from './marquee';
 export * from './scroller';
 export * from './text';
 export * from './tooltip';
-export * from './animation'
+export * from './animation';
